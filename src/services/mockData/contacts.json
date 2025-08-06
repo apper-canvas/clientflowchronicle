@@ -1,0 +1,90 @@
+[
+  {
+    "Id": 1,
+    "name": "Sarah Johnson",
+    "email": "sarah.johnson@techcorp.com",
+    "phone": "+1 (555) 123-4567",
+    "company": "TechCorp Solutions",
+    "position": "VP of Marketing",
+    "tags": ["enterprise", "marketing"],
+    "createdAt": "2024-01-15T10:30:00Z",
+    "lastContactedAt": "2024-03-10T14:20:00Z"
+  },
+  {
+    "Id": 2,
+    "name": "Michael Chen",
+    "email": "m.chen@innovate.io",
+    "phone": "+1 (555) 234-5678",
+    "company": "Innovate.io",
+    "position": "CEO",
+    "tags": ["startup", "ceo"],
+    "createdAt": "2024-01-20T09:15:00Z",
+    "lastContactedAt": "2024-03-12T11:45:00Z"
+  },
+  {
+    "Id": 3,
+    "name": "Emily Rodriguez",
+    "email": "emily@globaltech.com",
+    "phone": "+1 (555) 345-6789",
+    "company": "Global Technologies",
+    "position": "CTO",
+    "tags": ["enterprise", "technology"],
+    "createdAt": "2024-01-25T16:45:00Z",
+    "lastContactedAt": "2024-03-08T09:30:00Z"
+  },
+  {
+    "Id": 4,
+    "name": "David Wilson",
+    "email": "david.wilson@startup.co",
+    "phone": "+1 (555) 456-7890",
+    "company": "StartupCo",
+    "position": "Founder",
+    "tags": ["startup", "founder"],
+    "createdAt": "2024-02-01T11:20:00Z",
+    "lastContactedAt": "2024-03-11T16:10:00Z"
+  },
+  {
+    "Id": 5,
+    "name": "Lisa Thompson",
+    "email": "lisa@megacorp.com",
+    "phone": "+1 (555) 567-8901",
+    "company": "MegaCorp Industries",
+    "position": "Director of Operations",
+    "tags": ["enterprise", "operations"],
+    "createdAt": "2024-02-05T14:30:00Z",
+    "lastContactedAt": "2024-03-09T13:25:00Z"
+  },
+  {
+    "Id": 6,
+    "name": "James Park",
+    "email": "james@digitalfirst.com",
+    "phone": "+1 (555) 678-9012",
+    "company": "Digital First Media",
+    "position": "Marketing Director",
+    "tags": ["media", "marketing"],
+    "createdAt": "2024-02-10T08:45:00Z",
+    "lastContactedAt": "2024-03-07T15:40:00Z"
+  },
+  {
+    "Id": 7,
+    "name": "Anna Martinez",
+    "email": "anna@cloudservice.net",
+    "phone": "+1 (555) 789-0123",
+    "company": "CloudService Inc",
+    "position": "Product Manager",
+    "tags": ["cloud", "product"],
+    "createdAt": "2024-02-15T12:15:00Z",
+    "lastContactedAt": "2024-03-06T10:55:00Z"
+  },
+  {
+    "Id": 8,
+    "name": "Robert Kim",
+    "email": "robert.kim@fintech.io",
+    "phone": "+1 (555) 890-1234",
+    "company": "FinTech Solutions",
+    "position": "Head of Sales",
+    "tags": ["fintech", "sales"],
+    "createdAt": "2024-02-20T15:30:00Z",
+    "lastContactedAt": "2024-03-05T12:20:00Z"
+  }
+]

@@ -1,0 +1,110 @@
+[
+  {
+    "Id": 1,
+    "type": "call",
+    "contactId": 1,
+    "dealId": 1,
+    "description": "Discussed proposal details and implementation timeline. Sarah requested additional technical specifications for the board presentation.",
+    "date": "2024-03-12T14:30:00Z",
+    "duration": 45
+  },
+  {
+    "Id": 2,
+    "type": "email",
+    "contactId": 2,
+    "dealId": 2,
+    "description": "Sent contract amendment with revised pricing structure. Awaiting Michael's approval from legal team.",
+    "date": "2024-03-11T10:15:00Z",
+    "duration": null
+  },
+  {
+    "Id": 3,
+    "type": "meeting",
+    "contactId": 3,
+    "dealId": 3,
+    "description": "Technical deep-dive meeting with Emily's team. Discussed architecture requirements and integration challenges.",
+    "date": "2024-03-10T09:00:00Z",
+    "duration": 120
+  },
+  {
+    "Id": 4,
+    "type": "call",
+    "contactId": 4,
+    "dealId": 4,
+    "description": "Initial discovery call with David. Understanding their current pain points and budget expectations.",
+    "date": "2024-03-09T15:45:00Z",
+    "duration": 30
+  },
+  {
+    "Id": 5,
+    "type": "email",
+    "contactId": 5,
+    "dealId": null,
+    "description": "Follow-up on renewal satisfaction. Lisa confirmed they're happy with the service and looking to expand usage.",
+    "date": "2024-03-08T11:30:00Z",
+    "duration": null
+  },
+  {
+    "Id": 6,
+    "type": "meeting",
+    "contactId": 6,
+    "dealId": 6,
+    "description": "Product demo for James and his marketing team. Showed campaign automation and analytics features.",
+    "date": "2024-03-07T13:00:00Z",
+    "duration": 60
+  },
+  {
+    "Id": 7,
+    "type": "call",
+    "contactId": 7,
+    "dealId": 7,
+    "description": "Technical consultation call about cloud migration strategy. Anna needs timeline estimate for board approval.",
+    "date": "2024-03-06T16:20:00Z",
+    "duration": 50
+  },
+  {
+    "Id": 8,
+    "type": "task",
+    "contactId": 8,
+    "dealId": 8,
+    "description": "Prepared customized training curriculum for Robert's sales team. Included industry-specific scenarios and case studies.",
+    "date": "2024-03-05T10:00:00Z",
+    "duration": 180
+  },
+  {
+    "Id": 9,
+    "type": "note",
+    "contactId": 1,
+    "dealId": 1,
+    "description": "Sarah mentioned they're also evaluating competitor solutions. Need to highlight our unique differentiators in next presentation.",
+    "date": "2024-03-04T12:15:00Z",
+    "duration": null
+  },
+  {
+    "Id": 10,
+    "type": "email",
+    "contactId": 2,
+    "dealId": 2,
+    "description": "Sent implementation roadmap and project timeline. Michael wants to fast-track deployment to Q2.",
+    "date": "2024-03-03T14:45:00Z",
+    "duration": null
+  },
+  {
+    "Id": 11,
+    "type": "call",
+    "contactId": 6,
+    "dealId": 6,
+    "description": "Quick check-in call about proposal status. James mentioned budget approval is still pending from finance team.",
+    "date": "2024-03-02T11:00:00Z",
+    "duration": 20
+  },
+  {
+    "Id": 12,
+    "type": "meeting",
+    "contactId": 8,
+    "dealId": 8,
+    "description": "Contract review meeting with Robert and his legal counsel. Discussed terms, deliverables, and success metrics.",
+    "date": "2024-03-01T15:30:00Z",
+    "duration": 90
+  }
+]

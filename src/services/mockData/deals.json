@@ -1,0 +1,90 @@
+[
+  {
+    "Id": 1,
+    "title": "Enterprise CRM Implementation",
+    "value": 85000,
+    "stage": "proposal",
+    "contactId": 1,
+    "probability": 60,
+    "expectedCloseDate": "2024-04-15T00:00:00Z",
+    "createdAt": "2024-02-01T10:00:00Z",
+    "notes": "Large enterprise deal for complete CRM overhaul. Multiple stakeholders involved, need to present to board next week."
+  },
+  {
+    "Id": 2,
+    "title": "Startup Package Deal",
+    "value": 15000,
+    "stage": "negotiation",
+    "contactId": 2,
+    "probability": 80,
+    "expectedCloseDate": "2024-03-30T00:00:00Z",
+    "createdAt": "2024-02-15T14:30:00Z",
+    "notes": "Fast-growing startup needs scalable solution. Price sensitive but high growth potential."
+  },
+  {
+    "Id": 3,
+    "title": "Technology Consulting Services",
+    "value": 120000,
+    "stage": "qualified",
+    "contactId": 3,
+    "probability": 35,
+    "expectedCloseDate": "2024-05-20T00:00:00Z",
+    "createdAt": "2024-01-20T09:15:00Z",
+    "notes": "Long-term consulting engagement for digital transformation. Still in early evaluation phase."
+  },
+  {
+    "Id": 4,
+    "title": "Custom Development Project",
+    "value": 45000,
+    "stage": "lead",
+    "contactId": 4,
+    "probability": 20,
+    "expectedCloseDate": "2024-06-10T00:00:00Z",
+    "createdAt": "2024-03-01T11:45:00Z",
+    "notes": "Initial inquiry for custom software development. Need to qualify budget and timeline."
+  },
+  {
+    "Id": 5,
+    "title": "Enterprise License Renewal",
+    "value": 95000,
+    "stage": "closed",
+    "contactId": 5,
+    "probability": 100,
+    "expectedCloseDate": "2024-03-01T00:00:00Z",
+    "createdAt": "2024-01-10T16:20:00Z",
+    "notes": "Annual license renewal successfully closed. Customer very satisfied with service."
+  },
+  {
+    "Id": 6,
+    "title": "Digital Marketing Platform",
+    "value": 35000,
+    "stage": "proposal",
+    "contactId": 6,
+    "probability": 50,
+    "expectedCloseDate": "2024-04-25T00:00:00Z",
+    "createdAt": "2024-02-10T13:30:00Z",
+    "notes": "Marketing team needs integrated platform for campaign management. Competing with two other vendors."
+  },
+  {
+    "Id": 7,
+    "title": "Cloud Migration Services",
+    "value": 75000,
+    "stage": "qualified",
+    "contactId": 7,
+    "probability": 40,
+    "expectedCloseDate": "2024-05-15T00:00:00Z",
+    "createdAt": "2024-02-25T08:45:00Z",
+    "notes": "Planning to migrate legacy systems to cloud. Technical evaluation in progress."
+  },
+  {
+    "Id": 8,
+    "title": "Sales Team Training Program",
+    "value": 25000,
+    "stage": "negotiation",
+    "contactId": 8,
+    "probability": 75,
+    "expectedCloseDate": "2024-04-05T00:00:00Z",
+    "createdAt": "2024-02-28T12:00:00Z",
+    "notes": "Comprehensive sales training for growing team. Finalizing contract terms and schedule."
+  }
+]
