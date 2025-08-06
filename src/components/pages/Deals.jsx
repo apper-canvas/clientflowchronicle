@@ -30,9 +30,9 @@ const Deals = () => {
     try {
       setLoading(true)
       setError("")
-      const [dealsData, contactsData] = await Promise.all([
-        DealService.getAll(),
-        ContactService.getAll()
+const [dealsData, contactsData] = await Promise.all([
+        DealService.fetchAll(),
+        ContactService.fetchAll()
       ])
       setDeals(dealsData)
       setContacts(contactsData)
@@ -102,7 +102,11 @@ const Deals = () => {
     
     if (draggedDeal && draggedDeal.stage !== newStage) {
       try {
-        const updatedDeal = { ...draggedDeal, stage: newStage }
+const updatedDeal = { 
+          ...draggedDeal, 
+          stage_c: newStage,
+          stage: newStage // for backward compatibility
+        }
         
         // Update probability based on stage
         const stageProbabilities = {
@@ -112,7 +116,8 @@ const Deals = () => {
           negotiation: 75,
           closed: 100
         }
-        updatedDeal.probability = stageProbabilities[newStage] || updatedDeal.probability
+updatedDeal.probability_c = stageProbabilities[newStage] || (updatedDeal.probability_c || updatedDeal.probability)
+        updatedDeal.probability = updatedDeal.probability_c // for backward compatibility
         
         await DealService.update(draggedDeal.Id, updatedDeal)
         toast.success(`Deal moved to ${DEAL_STAGES[newStage.toUpperCase()].name}!`)
@@ -221,7 +226,7 @@ const Deals = () => {
                   {/* Stage Deals */}
                   <div className="space-y-4 min-h-[200px]">
                     {stageDeals.map((deal) => {
-                      const contact = contacts.find(c => c.Id === deal.contactId)
+const contact = contacts.find(c => c.Id === (deal.contactId_c || deal.contactId))
                       
                       return (
                         <div

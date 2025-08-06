@@ -24,44 +24,44 @@ const ContactCard = ({ contact, onClick, className = "" }) => {
       <div className="flex items-center gap-4">
         <Avatar className="h-12 w-12">
           <AvatarFallback className="bg-gradient-primary text-white font-medium">
-            {getInitials(contact.name)}
+{getInitials(contact.Name || contact.name)}
           </AvatarFallback>
         </Avatar>
         
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 mb-1">
-            <h3 className="font-semibold text-gray-900 truncate">{contact.name}</h3>
-            {contact.tags?.length > 0 && (
+<h3 className="font-semibold text-gray-900 truncate">{contact.Name || contact.name}</h3>
+{(contact.Tags || contact.tags) && (
               <Badge variant="default" className="text-xs">
-                {contact.tags[0]}
+                {typeof (contact.Tags || contact.tags) === 'string' ? (contact.Tags || contact.tags).split(',')[0] : (contact.Tags || contact.tags)[0]}
               </Badge>
             )}
           </div>
           
           <div className="space-y-1">
-            {contact.company && (
-              <p className="text-sm text-gray-600 truncate">{contact.company}</p>
+{(contact.company_c || contact.company) && (
+              <p className="text-sm text-gray-600 truncate">{contact.company_c || contact.company}</p>
             )}
             
             <div className="flex items-center gap-4 text-xs text-gray-500">
-              {contact.email && (
+{(contact.email_c || contact.email) && (
                 <div className="flex items-center gap-1">
                   <ApperIcon name="Mail" className="h-3 w-3" />
-                  <span className="truncate max-w-[120px]">{contact.email}</span>
+                  <span className="truncate max-w-[120px]">{contact.email_c || contact.email}</span>
                 </div>
               )}
               
-              {contact.phone && (
+{(contact.phone_c || contact.phone) && (
                 <div className="flex items-center gap-1">
                   <ApperIcon name="Phone" className="h-3 w-3" />
-                  <span>{contact.phone}</span>
+                  <span>{contact.phone_c || contact.phone}</span>
                 </div>
               )}
             </div>
             
-            {contact.lastContactedAt && (
+{(contact.lastContactedAt_c || contact.lastContactedAt) && (
               <p className="text-xs text-gray-400">
-                Last contacted: {formatRelativeTime(contact.lastContactedAt)}
+                Last contacted: {formatRelativeTime(contact.lastContactedAt_c || contact.lastContactedAt)}
               </p>
             )}
           </div>

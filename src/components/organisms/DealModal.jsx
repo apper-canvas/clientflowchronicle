@@ -21,15 +21,15 @@ const DealModal = ({ isOpen, onClose, deal, contacts, onSave }) => {
   const [errors, setErrors] = useState({})
   
   useEffect(() => {
-    if (deal) {
+if (deal) {
       setFormData({
-        title: deal.title || "",
-        value: deal.value?.toString() || "",
-        stage: deal.stage || "lead",
-        contactId: deal.contactId || "",
-        probability: deal.probability?.toString() || "",
-        expectedCloseDate: deal.expectedCloseDate ? deal.expectedCloseDate.split("T")[0] : "",
-        notes: deal.notes || ""
+        title: deal.title_c || deal.title || "",
+        value: (deal.value_c || deal.value)?.toString() || "",
+        stage: deal.stage_c || deal.stage || "lead",
+        contactId: (deal.contactId_c || deal.contactId) || "",
+        probability: (deal.probability_c || deal.probability)?.toString() || "",
+        expectedCloseDate: (deal.expectedCloseDate_c || deal.expectedCloseDate) ? (deal.expectedCloseDate_c || deal.expectedCloseDate).split("T")[0] : "",
+        notes: deal.notes_c || deal.notes || ""
       })
     } else {
       setFormData({
@@ -82,12 +82,15 @@ const DealModal = ({ isOpen, onClose, deal, contacts, onSave }) => {
       return
     }
     
-    const dealData = {
-      ...formData,
-      value: parseFloat(formData.value),
-      probability: parseInt(formData.probability),
-      expectedCloseDate: formData.expectedCloseDate || null,
-      createdAt: deal?.createdAt || new Date().toISOString()
+const dealData = {
+      title_c: formData.title,
+      value_c: parseFloat(formData.value),
+      stage_c: formData.stage,
+      contactId_c: formData.contactId ? parseInt(formData.contactId) : null,
+      probability_c: parseInt(formData.probability),
+      expectedCloseDate_c: formData.expectedCloseDate || null,
+      notes_c: formData.notes,
+      createdAt_c: deal?.createdAt_c || deal?.createdAt || new Date().toISOString()
     }
     
     if (deal) {
@@ -191,8 +194,8 @@ const DealModal = ({ isOpen, onClose, deal, contacts, onSave }) => {
                 >
                   <option value="">Select a contact</option>
                   {contacts.map((contact) => (
-                    <option key={contact.Id} value={contact.Id}>
-                      {contact.name} {contact.company && `- ${contact.company}`}
+<option key={contact.Id} value={contact.Id}>
+                      {contact.Name || contact.name} {(contact.company_c || contact.company) && `- ${contact.company_c || contact.company}`}
                     </option>
                   ))}
                 </select>

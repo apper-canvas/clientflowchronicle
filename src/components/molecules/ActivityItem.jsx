@@ -6,7 +6,7 @@ import { getActivityType } from "@/utils/dealStages"
 import { motion } from "framer-motion"
 
 const ActivityItem = ({ activity, contact, deal, className = "" }) => {
-  const activityType = getActivityType(activity.type)
+const activityType = getActivityType(activity.type_c || activity.type)
   
   const getInitials = (name) => {
     return name
@@ -37,17 +37,17 @@ const ActivityItem = ({ activity, contact, deal, className = "" }) => {
                 {activityType.name}
               </Badge>
               <span className="text-sm text-gray-500">
-                {formatRelativeTime(activity.date)}
+{formatRelativeTime(activity.date_c || activity.date)}
               </span>
-              {activity.duration && (
+{(activity.duration_c || activity.duration) && (
                 <span className="text-sm text-gray-400">
-                  • {formatDuration(activity.duration)}
+                  • {formatDuration(activity.duration_c || activity.duration)}
                 </span>
               )}
             </div>
           </div>
           
-          <p className="text-gray-900 mb-3">{activity.description}</p>
+<p className="text-gray-900 mb-3">{activity.description_c || activity.description}</p>
           
           {/* Related Contact/Deal */}
           <div className="flex items-center gap-4">
@@ -55,17 +55,17 @@ const ActivityItem = ({ activity, contact, deal, className = "" }) => {
               <div className="flex items-center gap-2">
                 <Avatar className="h-6 w-6">
                   <AvatarFallback className="bg-gradient-primary text-white text-xs">
-                    {getInitials(contact.name)}
+{getInitials(contact.Name || contact.name)}
                   </AvatarFallback>
                 </Avatar>
-                <span className="text-sm text-gray-600">{contact.name}</span>
+<span className="text-sm text-gray-600">{contact.Name || contact.name}</span>
               </div>
             )}
             
             {deal && (
               <div className="flex items-center gap-2">
                 <ApperIcon name="Briefcase" className="h-4 w-4 text-gray-400" />
-                <span className="text-sm text-gray-600">{deal.title}</span>
+<span className="text-sm text-gray-600">{deal.title_c || deal.title || deal.Name}</span>
               </div>
             )}
           </div>

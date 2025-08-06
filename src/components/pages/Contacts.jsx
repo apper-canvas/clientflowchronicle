@@ -32,7 +32,7 @@ const Contacts = () => {
     try {
       setLoading(true)
       setError("")
-      const data = await ContactService.getAll()
+const data = await ContactService.fetchAll()
       setContacts(data)
       setFilteredContacts(data)
     } catch (err) {

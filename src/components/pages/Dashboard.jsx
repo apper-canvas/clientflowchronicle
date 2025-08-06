@@ -31,10 +31,10 @@ const Dashboard = () => {
       setLoading(true)
       setError("")
       
-      const [contactsData, dealsData, activitiesData] = await Promise.all([
-        ContactService.getAll(),
-        DealService.getAll(),
-        ActivityService.getAll()
+const [contactsData, dealsData, activitiesData] = await Promise.all([
+        ContactService.fetchAll(),
+        DealService.fetchAll(),
+        ActivityService.fetchAll()
       ])
       
       setContacts(contactsData)
@@ -258,7 +258,7 @@ const Dashboard = () => {
                 ) : (
                   <div className="space-y-4">
                     {activities.map((activity) => {
-                      const contact = contacts.find(c => c.Id === activity.contactId)
+const contact = contacts.find(c => c.Id === (activity.contactId_c || activity.contactId))
                       const deal = deals.find(d => d.Id === activity.dealId)
                       const activityType = getActivityType(activity.type)
                       

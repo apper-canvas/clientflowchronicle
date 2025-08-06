@@ -35,10 +35,10 @@ const Activities = () => {
     try {
       setLoading(true)
       setError("")
-      const [activitiesData, contactsData, dealsData] = await Promise.all([
-        ActivityService.getAll(),
-        ContactService.getAll(),
-        DealService.getAll()
+const [activitiesData, contactsData, dealsData] = await Promise.all([
+        ActivityService.fetchAll(),
+        ContactService.fetchAll(),
+        DealService.fetchAll()
       ])
       setActivities(activitiesData)
       setContacts(contactsData)
@@ -269,8 +269,8 @@ const Activities = () => {
                 {/* Day Activities */}
                 <div className="space-y-4">
                   {dayActivities.map((activity) => {
-                    const contact = contacts.find(c => c.Id === activity.contactId)
-                    const deal = deals.find(d => d.Id === activity.dealId)
+const contact = contacts.find(c => c.Id === (activity.contactId_c || activity.contactId))
+                    const deal = deals.find(d => d.Id === (activity.dealId_c || activity.dealId))
                     
                     return (
                       <ActivityItem

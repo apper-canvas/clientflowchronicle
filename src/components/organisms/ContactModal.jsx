@@ -19,14 +19,14 @@ const ContactModal = ({ isOpen, onClose, contact, onSave }) => {
   const [errors, setErrors] = useState({})
   
   useEffect(() => {
-    if (contact) {
+if (contact) {
       setFormData({
-        name: contact.name || "",
-        email: contact.email || "",
-        phone: contact.phone || "",
-        company: contact.company || "",
-        position: contact.position || "",
-        tags: contact.tags?.join(", ") || ""
+        name: contact.Name || contact.name || "",
+        email: contact.email_c || contact.email || "",
+        phone: contact.phone_c || contact.phone || "",
+        company: contact.company_c || contact.company || "",
+        position: contact.position_c || contact.position || "",
+        tags: contact.Tags ? (typeof contact.Tags === 'string' ? contact.Tags : contact.Tags.join(", ")) : (contact.tags?.join(", ") || "")
       })
     } else {
       setFormData({
@@ -72,9 +72,24 @@ const ContactModal = ({ isOpen, onClose, contact, onSave }) => {
       lastContactedAt: contact?.lastContactedAt || null
     }
     
-    if (contact) {
-      contactData.Id = contact.Id
+// Transform to database field names
+    const finalData = {
+      Name: contactData.name,
+      email_c: contactData.email,
+      phone_c: contactData.phone,
+      company_c: contactData.company,
+      position_c: contactData.position,
+      Tags: contactData.tags,
+      createdAt_c: contact?.createdAt_c || contact?.createdAt || new Date().toISOString(),
+      lastContactedAt_c: contact?.lastContactedAt_c || contact?.lastContactedAt || null
     }
+    
+    if (contact) {
+      finalData.Id = contact.Id
+    }
+    
+    // Pass the transformed data to the service
+    onSave(finalData)
     
     onSave(contactData)
     onClose()

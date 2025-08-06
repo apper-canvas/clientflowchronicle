@@ -24,13 +24,13 @@ const ActivityModal = ({ isOpen, onClose, activity, contacts, deals, onSave }) =
       const activityDate = new Date(activity.date)
       const dateString = activityDate.toISOString().slice(0, 16)
       
-      setFormData({
-        type: activity.type || "call",
-        contactId: activity.contactId || "",
-        dealId: activity.dealId || "",
-        description: activity.description || "",
+setFormData({
+        type: activity.type_c || activity.type || "call",
+        contactId: (activity.contactId_c || activity.contactId) || "",
+        dealId: (activity.dealId_c || activity.dealId) || "",
+        description: activity.description_c || activity.description || "",
         date: dateString,
-        duration: activity.duration?.toString() || ""
+        duration: (activity.duration_c || activity.duration)?.toString() || ""
       })
     } else {
       const now = new Date()
@@ -85,9 +85,22 @@ const ActivityModal = ({ isOpen, onClose, activity, contacts, deals, onSave }) =
       dealId: formData.dealId || null
     }
     
-    if (activity) {
-      activityData.Id = activity.Id
+// Transform to database field names
+    const finalData = {
+      type_c: activityData.type,
+      contactId_c: activityData.contactId ? parseInt(activityData.contactId) : null,
+      dealId_c: activityData.dealId ? parseInt(activityData.dealId) : null,
+      description_c: activityData.description,
+      date_c: activityData.date,
+      duration_c: activityData.duration ? parseInt(activityData.duration) : null
     }
+    
+    if (activity) {
+      finalData.Id = activity.Id
+    }
+    
+    // Pass the transformed data to the service
+    onSave(finalData)
     
     onSave(activityData)
     onClose()
@@ -174,8 +187,8 @@ const ActivityModal = ({ isOpen, onClose, activity, contacts, deals, onSave }) =
                 >
                   <option value="">Select a contact</option>
                   {contacts.map((contact) => (
-                    <option key={contact.Id} value={contact.Id}>
-                      {contact.name} {contact.company && `- ${contact.company}`}
+<option key={contact.Id} value={contact.Id}>
+                      {contact.Name || contact.name} {(contact.company_c || contact.company) && `- ${contact.company_c || contact.company}`}
                     </option>
                   ))}
                 </select>
@@ -193,8 +206,8 @@ const ActivityModal = ({ isOpen, onClose, activity, contacts, deals, onSave }) =
                 >
                   <option value="">No related deal</option>
                   {deals.map((deal) => (
-                    <option key={deal.Id} value={deal.Id}>
-                      {deal.title}
+<option key={deal.Id} value={deal.Id}>
+                      {deal.title_c || deal.title || deal.Name}
                     </option>
                   ))}
                 </select>
