@@ -1,4 +1,5 @@
-import { useState, useEffect, useOutletContext } from "react"
+import { useState, useEffect } from "react"
+import { useOutletContext } from "react-router-dom"
 import { motion } from "framer-motion"
 import Button from "@/components/atoms/Button"
 import Badge from "@/components/atoms/Badge"
