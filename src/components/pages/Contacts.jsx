@@ -1,16 +1,20 @@
-import { useState, useEffect, useOutletContext } from "react"
-import { motion } from "framer-motion"
-import Button from "@/components/atoms/Button"
-import SearchBar from "@/components/molecules/SearchBar"
-import ContactCard from "@/components/molecules/ContactCard"
-import Header from "@/components/organisms/Header"
-import ContactModal from "@/components/organisms/ContactModal"
-import ApperIcon from "@/components/ApperIcon"
-import Loading from "@/components/ui/Loading"
-import Error from "@/components/ui/Error"
-import Empty from "@/components/ui/Empty"
-import { ContactService } from "@/services/api/ContactService"
-import { toast } from "react-toastify"
+import React, { useEffect, useState } from "react";
+import { useOutletContext } from "react-router-dom";
+import { toast } from "react-toastify";
+import { motion } from "framer-motion";
+import { Filter, Plus, Search, Users } from "lucide-react";
+import { ContactService } from "@/services/api/ContactService";
+import { ActivityService } from "@/services/api/ActivityService";
+import { DealService } from "@/services/api/DealService";
+import ApperIcon from "@/components/ApperIcon";
+import SearchBar from "@/components/molecules/SearchBar";
+import ContactCard from "@/components/molecules/ContactCard";
+import Header from "@/components/organisms/Header";
+import ContactModal from "@/components/organisms/ContactModal";
+import Loading from "@/components/ui/Loading";
+import Error from "@/components/ui/Error";
+import Empty from "@/components/ui/Empty";
+import Button from "@/components/atoms/Button";
 
 const Contacts = () => {
   const { onMobileMenuToggle } = useOutletContext()

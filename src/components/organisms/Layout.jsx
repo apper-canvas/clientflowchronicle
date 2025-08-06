@@ -1,17 +1,17 @@
-import { useState } from "react"
-import { Outlet } from "react-router-dom"
-import Sidebar from "@/components/organisms/Sidebar"
+import React, { useState } from "react";
+import { Outlet } from "react-router-dom";
+import Sidebar from "@/components/organisms/Sidebar";
 
-const Layout = () => {
-  const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false)
+function Layout() {
+  const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
   
   const handleMobileMenuToggle = () => {
-    setIsMobileSidebarOpen(!isMobileSidebarOpen)
-  }
+    setIsMobileSidebarOpen(!isMobileSidebarOpen);
+  };
   
   const handleMobileSidebarClose = () => {
-    setIsMobileSidebarOpen(false)
-  }
+    setIsMobileSidebarOpen(false);
+  };
   
   return (
     <div className="min-h-screen bg-gray-50">
@@ -22,12 +22,18 @@ const Layout = () => {
       
       {/* Main content */}
       <div className="lg:pl-64">
-        <main className="min-h-screen">
+        <div className="flex-1 flex flex-col overflow-hidden">
           <Outlet context={{ onMobileMenuToggle: handleMobileMenuToggle }} />
-        </main>
+        </div>
       </div>
-    </div>
-  )
-}
 
-export default Layout
+      {/* Mobile sidebar backdrop */}
+      {isMobileSidebarOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
+          onClick={handleMobileSidebarClose}
+        />
+      )}
+    </div>
+  );
+}
